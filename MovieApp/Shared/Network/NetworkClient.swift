@@ -39,7 +39,6 @@ class NetworkClient: NetworkClientProtocol {
     }
   }
   
-  
   static let sharedInstance = NetworkClient()
   
   let session: URLSession!

@@ -2,14 +2,7 @@ import UIKit
 
 class MovieTVCell: BaseTVCell {
   
-  override var isHighlighted: Bool{
-    didSet{
-      
-    }
-  }
-  
   struct Constants {
-    static let backgroundColor = UIColor.init(red: 222/255, green: 222/255, blue: 222/255, alpha: 1)
     
     static let marginStart: CGFloat = 2
     static let marginTop: CGFloat = 0
