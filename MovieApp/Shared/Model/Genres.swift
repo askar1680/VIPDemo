@@ -4,6 +4,7 @@ class GenresList {
   
   public static let shared = GenresList()
   private var genresDict: Dictionary<Int, String>
+  
   private init() {
     let genres = try! JSONDecoder().decode(Genres.self, from: Data(GenresList.jsonGenres.utf8))
     genresDict = Dictionary()
@@ -13,12 +14,13 @@ class GenresList {
   }
   
   func getGenres(genreIds: Array<Int>) -> String {
-    var genres = [String]()
-    for id in genreIds{
-      if let name = genresDict[id]{
-        genres.append(name)
+    let genres = genresDict.compactMap { (id, name) -> String? in
+      if genreIds.contains(id){
+        return name
       }
+      return nil
     }
+    
     return genres.joined(separator: ", ")
   }
   

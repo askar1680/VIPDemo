@@ -35,8 +35,7 @@ extension MoviesPresenter: MoviesInteractorOutput {
   }
 }
 
-
-enum MoviesError: Error {
+enum CustomError: Error {
   case generic
   case invalidURL
   case invalidResponse

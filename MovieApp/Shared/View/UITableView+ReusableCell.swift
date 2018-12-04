@@ -10,7 +10,6 @@ extension ReusableCell where Self: UITableViewCell{
   }
 }
 
-
 extension UITableView{
   func register<T: UITableViewCell>(_: T.Type) where T: ReusableCell{
     register(T.self, forCellReuseIdentifier: T.identifier)

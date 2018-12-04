@@ -5,7 +5,6 @@ enum NetworkError: Error {
   case invalidURL
 }
 
-
 protocol NetworkClientProtocol {
   func sendRequest(request: URLRequest, completion: @escaping (Data?, URLResponse?, Error?) -> ())
   func fetchCodable<T>(url: URL?, type: T.Type, completion:  @escaping (T?, Error?) -> ()) where  T: Codable
@@ -13,12 +12,12 @@ protocol NetworkClientProtocol {
 
 class NetworkClient: NetworkClientProtocol {
   func fetchCodable<T>(url: URL?, type: T.Type, completion: @escaping (T?, Error?) -> ()) where T : Decodable, T : Encodable {
-    guard let url = url else { completion(nil, MoviesError.invalidURL); return }
+    guard let url = url else { completion(nil, CustomError.invalidURL); return }
     let request = URLRequest(url: url)
     sendRequest(request: request) { (data, response, error) in
       var error: Error?
       if error != nil {
-        error = MoviesError.invalidResponse
+        error = CustomError.invalidResponse
       }
       else {
         if let data = data {
@@ -28,11 +27,11 @@ class NetworkClient: NetworkClientProtocol {
             return
           }
           else {
-            error = MoviesError.generic
+            error = CustomError.generic
           }
         }
         else {
-          error = MoviesError.generic
+          error = CustomError.generic
         }
       }
       completion(nil, error)

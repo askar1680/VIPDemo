@@ -21,7 +21,4 @@ class BaseTVCell: UITableViewCell, ReusableCell{
     
   }
   
-  open class func reuseIdentifier() -> String {
-    return NSStringFromClass(self)
-  }
 }
