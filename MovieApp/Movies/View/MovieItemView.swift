@@ -40,6 +40,8 @@ class MovieItemView: BaseView {
     
     
     imageView.contentMode = .scaleAspectFill
+    imageView.backgroundColor = .lightGray
+    imageView.clipsToBounds = true
     addSubview(imageView)
     
     nameLabel.textColor = .black
