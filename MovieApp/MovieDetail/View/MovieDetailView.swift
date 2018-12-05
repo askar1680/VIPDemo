@@ -5,6 +5,10 @@ class MovieDetailView: BaseView {
  
   override func setup() {
     super.setup()
+    
+    tableView.separatorStyle = .singleLine
+    
+    
     addSubview(tableView)
   }
   override func setupConstraints() {

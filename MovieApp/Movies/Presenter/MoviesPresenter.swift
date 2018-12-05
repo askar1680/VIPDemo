@@ -11,7 +11,6 @@ final class MoviesPresenter {
   private weak var output: MoviesPresenterOutput?
   
   init(output: MoviesPresenterOutput) {
-    
     self.output = output
   }
 }
@@ -29,7 +28,7 @@ extension MoviesPresenter: MoviesInteractorOutput {
   
   func presentError(error: Error) {
     let errorViewModel = ErrorViewModel(title: Strings.Error.genericTitle,
-                                        message: Strings.Error.genericMessage,
+                                        message: error.localizedDescription,
                                         buttonTitles: [Strings.Error.okButtonTitle])
     output?.displayError(viewModel: errorViewModel)
   }
