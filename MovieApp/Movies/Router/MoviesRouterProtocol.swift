@@ -2,7 +2,7 @@ import UIKit
 
 protocol MoviesRouterProtocol {
   var viewController: MoviesViewController? { get }
-  func navigateToMovie(atIndexPath indexPath: IndexPath)
+  func navigateToMovie(id: Int)
 }
 
 final class MoviesRouter {
@@ -13,9 +13,10 @@ final class MoviesRouter {
 }
 
 extension MoviesRouter: MoviesRouterProtocol {
-  func navigateToMovie(atIndexPath indexPath: IndexPath) {
-    // Go to detail
-    
+  func navigateToMovie(id: Int) {
+    let detailController = MovieDetailViewController()
+    detailController.id = id
+    viewController?.navigationController?.pushViewController(detailController, animated: true)
   }
 }
 

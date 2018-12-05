@@ -13,7 +13,6 @@ class AsyncImageView: UIImageView {
       self.image = cachedImage
       return
     }
-    
     let sessionConfig = URLSessionConfiguration.default
     let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
     if let url = URL.init(string: urlString){
@@ -25,10 +24,8 @@ class AsyncImageView: UIImageView {
                 imageCache.setObject(downloadedImage as AnyObject, forKey: urlString as AnyObject)
                 self.image = downloadedImage
               }
-              
             }
           }
-          
         }
         else {
           print(error as Any)
@@ -36,7 +33,5 @@ class AsyncImageView: UIImageView {
       })
       task.resume()
     }
-    
   }
-  
 }

@@ -15,6 +15,7 @@ protocol URLConvertible {
 enum MovieAPIEndPoint{
   case getPopularMovies(Int)
   case getGenreList()
+  case getMovieDetail(Int)
 }
 
 extension MovieAPIEndPoint: URLConvertible{
@@ -25,6 +26,9 @@ extension MovieAPIEndPoint: URLConvertible{
       return URL(string: "\(TmdbAPI.baseURLString)\(method)?api_key=\(TmdbAPI.apiKey)&language=\(TmdbAPI.language)&page=\(page)")
     case .getGenreList():
       let method = "genre/movie/list"
+      return URL(string: "\(TmdbAPI.baseURLString)\(method)?api_key=\(TmdbAPI.apiKey)&language=\(TmdbAPI.language)")
+    case .getMovieDetail(let id):
+      let method = "movie/\(id)"
       return URL(string: "\(TmdbAPI.baseURLString)\(method)?api_key=\(TmdbAPI.apiKey)&language=\(TmdbAPI.language)")
     }
   }

@@ -21,7 +21,7 @@ class MoviesViewController: UIViewController, ErrorPresenter{
   var router: MoviesRouterProtocol!
   let moviesView = MoviesView()
   var page = 1
-  fileprivate var moviesViewModels: [MovieViewModel] = []
+  var moviesViewModels: [MovieViewModel] = []
   init(configurator: MoviesConfigurator = MoviesConfigurator.sharedInstance) {
     super.init(nibName: nil, bundle: nil)
     configure(configurator: configurator)
@@ -76,13 +76,14 @@ extension MoviesViewController: UITableViewDataSource{
 extension MoviesViewController: UITableViewDelegate{
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
-    router.navigateToMovie(atIndexPath: indexPath)
+    if let id = moviesViewModels[indexPath.row].id{
+      router.navigateToMovie(id: id)
+    }
   }
   func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
     if (indexPath.row+1 == moviesViewModels.count){
       page+=1
       fetchMovies(page: page)
-      
     }
   }
   
