@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BB55F0521B7A51C000BC5DD /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB55F0421B7A51C000BC5DD /* AsyncImageView.swift */; };
 		7BB5B47821B52A40008891BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5B47721B52A40008891BD /* AppDelegate.swift */; };
 		7BB5B47A21B52A40008891BD /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB5B47921B52A40008891BD /* MoviesViewController.swift */; };
 		7BB5B47F21B52A42008891BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BB5B47E21B52A42008891BD /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BB55F0421B7A51C000BC5DD /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		7BB5B47421B52A40008891BD /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BB5B47721B52A40008891BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BB5B47921B52A40008891BD /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				7BB5B49221B52B66008891BD /* BaseTVCell.swift */,
 				7BCAFA5A21B5A01300DDE419 /* UITableView+ReusableCell.swift */,
 				7BCAFA5C21B5A31200DDE419 /* UIImageView+Helpers.swift */,
+				7BB55F0421B7A51C000BC5DD /* AsyncImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				7BB5B49321B52B66008891BD /* BaseTVCell.swift in Sources */,
 				7BB5B4A921B5302D008891BD /* MovieItemView.swift in Sources */,
 				7BB5B4BD21B53396008891BD /* Strings.swift in Sources */,
+				7BB55F0521B7A51C000BC5DD /* AsyncImageView.swift in Sources */,
 				7BB5B49B21B52D57008891BD /* ErrorViewModel.swift in Sources */,
 				7BB5B4AC21B53050008891BD /* MovieViewModel.swift in Sources */,
 				7BB5B4B521B531CB008891BD /* MoviesRouterProtocol.swift in Sources */,

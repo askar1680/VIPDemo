@@ -2,7 +2,7 @@ import UIKit
 
 class MovieItemView: BaseView {
   
-  let imageView = UIImageView()
+  let imageView = AsyncImageView()
   let nameLabel = UILabel()
   let originalNameLabel = UILabel()
   let genresLabel = UILabel()
@@ -14,9 +14,11 @@ class MovieItemView: BaseView {
       originalNameLabel.text = viewModel?.getOriginalNameWithReleaseDate()
       genresLabel.text = viewModel?.getGenres()
       voteAverageLabel.attributedText = viewModel?.getVoteAverageWithPopularity()
+      imageView.image = nil
+      
       if let imageUrl = viewModel?.imageURL {
         let url = "\(TmdbAPI.posterPath)\(imageUrl)"
-        imageView.downloadImage(urlString: url)
+        imageView.downloadImageFrom(urlString: url)
       }
     }
   }
