@@ -25,4 +25,12 @@ extension MoviesWorker{
       }
     }
   }
+  func fetchMovieImage(movie: Movie, completion: @escaping (Data?, Error?) -> ()){
+    if let url = URL(string: "\(TmdbAPI.posterPath)\(movie.poster_path ?? "")"){
+      networkClient.sendRequest(request: URLRequest(url: url)) { (data, response, error) in
+        completion(data, error)
+      }
+    }
+    
+  }
 }

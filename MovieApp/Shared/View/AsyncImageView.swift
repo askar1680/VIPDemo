@@ -4,7 +4,7 @@ let imageCache = NSCache<AnyObject, AnyObject>()
 
 class AsyncImageView: UIImageView {
   
-  private var currentUrl: String? //Get a hold of the latest request url
+  private var currentUrl: String? 
   
   public func downloadImageFrom(urlString: String){
     currentUrl = urlString

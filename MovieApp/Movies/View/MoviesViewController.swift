@@ -1,11 +1,18 @@
 import UIKit
 
 protocol MoviesViewControllerOutput {
-  var movies: [Movie]? { get }
+  var movies: [Movie] { get }
   func fetchMovies(page: Int)
 }
 
 extension MoviesViewController: MoviesPresenterOutput{
+  func display(image: UIImage?, at index: Int) {
+    moviesViewModels[index].posterImage = image
+    UIView.performWithoutAnimation {
+      moviesView.tableView.reloadRows(at: [IndexPath.init(row: index, section: 0)], with: UITableView.RowAnimation.none)
+    }
+  }
+  
   func displayMovies(viewModels: [MovieViewModel]) {
     moviesViewModels += viewModels
     moviesView.tableView.reloadData()

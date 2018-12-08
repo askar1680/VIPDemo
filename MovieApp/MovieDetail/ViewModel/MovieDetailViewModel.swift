@@ -10,7 +10,7 @@ struct MovieDetailViewModel {
   var popularity: CGFloat
   var backdrop_path: String?
   var poster_path: String?
-  
+
   var budget: Int?
   var genres: Array<Genre>?
   var production_companies: Array<ProductionCompany>?

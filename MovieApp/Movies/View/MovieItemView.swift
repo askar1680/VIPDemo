@@ -15,11 +15,13 @@ class MovieItemView: BaseView {
       genresLabel.text = viewModel?.getGenres()
       voteAverageLabel.attributedText = viewModel?.getVoteAverageWithPopularity()
       imageView.image = nil
-      
-      if let imageUrl = viewModel?.imageURL {
-        let url = "\(TmdbAPI.posterPath)\(imageUrl)"
-        imageView.downloadImageFrom(urlString: url)
+      if let posterImage = viewModel?.posterImage{
+        imageView.image = posterImage
       }
+//      if let imageUrl = viewModel?.posterPath {
+//        let url = "\(TmdbAPI.posterPath)\(imageUrl)"
+//        imageView.downloadImageFrom(urlString: url)
+//      }
     }
   }
   

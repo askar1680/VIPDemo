@@ -27,7 +27,6 @@ extension MovieDetailInteractor: MovieDetailViewControllerOutput {
           strongSelf.movieDetail = movieDetail
         }
       }
-      
     }
   }
 }

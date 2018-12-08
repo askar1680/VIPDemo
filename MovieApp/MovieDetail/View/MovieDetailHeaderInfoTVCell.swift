@@ -64,7 +64,7 @@ class MovieDetailHeaderInfoTVCell: BaseTVCell {
     
     nameLabel.translatesAutoresizingMaskIntoConstraints = false
     nameLabel.topAnchor.constraint(equalTo: postImageView.topAnchor, constant: 8).isActive = true
-    nameLabel.leadingAnchor.constraint(equalTo: postImageView.trailingAnchor, constant: 8).isActive = true
+    nameLabel.leadingAnchor.constraint(equalTo: postImageView.trailingAnchor, constant: 16).isActive = true
     nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
     
     originalNameLabel.translatesAutoresizingMaskIntoConstraints = false

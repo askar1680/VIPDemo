@@ -5,10 +5,11 @@ struct MovieViewModel {
   let title: String?
   let original_title: String?
   let release_date: String?
-  let imageURL: String?
+  let posterPath: String?
   let genre_ids: Array<Int>?
   let vote_average: CGFloat?
   let popularity: CGFloat?
+  var posterImage: UIImage?
   
   
   func getOriginalNameWithReleaseDate() -> String {

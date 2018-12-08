@@ -2,6 +2,7 @@ import UIKit
 
 
 protocol MoviesPresenterOutput: AnyObject {
+  func display(image: UIImage?, at index: Int)
   func displayMovies(viewModels: [MovieViewModel])
   func displayError(viewModel: ErrorViewModel)
 }
@@ -16,12 +17,16 @@ final class MoviesPresenter {
 }
 
 extension MoviesPresenter: MoviesInteractorOutput {
+  func present(image: UIImage?, at index: Int) {
+    output?.display(image: image, at: index)
+  }
+  
   func presentMovies(movies: [Movie]) {
     let viewModels = movies.compactMap { movie -> MovieViewModel in
       return MovieViewModel(id: movie.id, title: movie.title, original_title: movie.original_title,
                             release_date: movie.release_date,
-                            imageURL: movie.poster_path, genre_ids: movie.genre_ids,
-                            vote_average: movie.vote_average, popularity: movie.popularity)
+                            posterPath: movie.poster_path, genre_ids: movie.genre_ids,
+                            vote_average: movie.vote_average, popularity: movie.popularity, posterImage: nil)
     }
     output?.displayMovies(viewModels: viewModels)
   }
